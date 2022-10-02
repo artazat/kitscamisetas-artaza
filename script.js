@@ -1,4 +1,4 @@
-alert("Buenos días, sea bienvenido a Eme Camisetas.")
+alert("Buenos días, sea bienvenido a Kits!.")
 let precio = 0
 
 while (precio === 0) {
