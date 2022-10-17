@@ -110,7 +110,6 @@ if (promptLista === 0) {
             enStock = false
         } else {
             alert("Gracias por la compra, vuelva pronto. 😊")
-            console.log("Gracias por la compra, vuelva pronto. 😊")
         }
     }
 }
