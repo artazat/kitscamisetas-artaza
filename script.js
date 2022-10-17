@@ -1,44 +1,116 @@
 alert("Buenos días, sea bienvenido a Kits!.")
-let precio = 0
+let enStock = false
 
-while (precio === 0) {
-    let equipo = prompt("Ingrese el equipo del que desesa la camiseta")
+class Remeras {
+    constructor(equipo, precio) {
+        this.equipo = equipo
+        this.precio = precio
+    }
 
-    switch (equipo) {
-        case "River":
-        case "river":
-            precio = 15000
-            break;
+    comprar(n) {
+        alert(`Equipo: ${arrayRemeras[n].equipo}  -  Precio: $${arrayRemeras[n].precio}`)
+    }
 
-        case "Boca":
-        case "boca":
-            precio = 13500
-            break;
+    alCarrito(m) {
+        const carrito = []
+        const agregarAlCarro = arrayRemeras.find((remera) => {
+            return remera.equipo === arrayRemeras[m].equipo
+        })
 
-        case "Belgrano":
-        case "belgrano":
-            precio = 11000
-            break;
-
-        case "Talleres":
-        case "talleres":
-            precio = 10500
-            break;
-
-        default:
-            alert("Lo sentimos, en este momento no tenemos camisetas del equipo ingresado :(")
+        carrito.push(agregarAlCarro)
+        console.log(`Producto comprado (sin los impuestos):`)
+        console.log(carrito)
     }
 }
-alert("El precio, SIN IVA incluido, es de: $" + precio)
 
-let calcular = prompt("¿Quisiera saber el precio del producto con el IVA? Si quiere, escriba lo que desee para confirmar, de lo contrario escriba 'No' y el IVA no será calculado.")
-const iva = (precio) => ((21 * precio) / 100) + precio
-// const si = calcular == "si" || calcular == "Si" || calcular == "SI" || calcular == "sI"
-const no = calcular == "no" || calcular == "No" || calcular == "NO" || calcular == "nO"
 
-if(!no){
-    alert("El precio final, con IVA incluido, es de: $" + iva(precio))
-    alert("Gracias por la compra, vuelva pronto. 😊")
-}else{
-    alert("Usted ha introducido 'NO'. Que tenda un buen día, vuelva pronto. 😊")
+const arrayRemeras = []
+
+arrayRemeras.push(new Remeras("River", 15000))
+arrayRemeras.push(new Remeras("Boca", 13500))
+arrayRemeras.push(new Remeras("Belgrano", 11000))
+arrayRemeras.push(new Remeras("Talleres", 10500))
+
+arrayRemeras.sort((a, b) => {
+    if (a.precio > b.precio) {
+        return -1
+    } else if (a.precio < b.precio) {
+        return 1
+    } else {
+        return 0
+    }
+})
+console.log(arrayRemeras)
+
+
+
+let promptLista = parseInt(prompt(`¿Usted quiere ver la lista de productos? Si no quiere / ya la vió, presione el valor que desee. Si no vio la lista / quiere volver a verla, presione "0"`))
+
+if (promptLista === 0) {
+    alert("¡Abra la CONSOLA (F12) para poder visualizar la lista de productos! NO olvide RECARGAR (F5) la página luego de ver la lista, así pasará a la fase de selección.")
+} else {
+    alert("Usted ya vio / no quiere ver la lista, por lo tanto, pasaremos a la fase de selección.")
+
+    while (enStock === false) {
+        let elPrompt = parseInt(prompt("Ingrese el número del equipo deseado: 1. River   2. Boca   3. Belgrano   4. Talleres"))
+
+        function calcularImpuesto() {
+            return (precio) => (precio + ((21 * precio) / 100) + ((8 * precio) / 100))
+        }
+        const impuestosTotal = calcularImpuesto()
+
+        switch (elPrompt) {
+            case 1:
+                enStock = true
+                arrayRemeras[0].comprar(0)
+                arrayRemeras[0].alCarrito(0)
+
+                alert("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[0].precio))
+
+                console.log("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[0].precio))
+                break;
+
+            case 2:
+                enStock = true
+                arrayRemeras[1].comprar(1)
+                arrayRemeras[1].alCarrito(1)
+
+                alert("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[1].precio))
+
+                console.log("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[1].precio))
+                break;
+
+            case 3:
+                enStock = true
+                arrayRemeras[2].comprar(2)
+                arrayRemeras[2].alCarrito(2)
+
+                alert("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[2].precio))
+
+                console.log("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[2].precio))
+                break;
+
+            case 4:
+                enStock = true
+                arrayRemeras[3].comprar(3)
+                arrayRemeras[3].alCarrito(3)
+
+                alert("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[3].precio))
+
+                console.log("El precio, con IVA e IIBB incluido, es de: $" + impuestosTotal(arrayRemeras[3].precio))
+                break;
+
+            default:
+                alert("El valor ingresado es distinto a las opciones mostradas en pantalla, intendelo nuevamente 😊.")
+        }
+
+        let otraCompra = parseInt(prompt(`¿Desea usted comprar otra remera? Si es así, ingrese "1". Si NO es así, entonces ingrese cualquier otro valor.`))
+
+        if (otraCompra === 1) {
+            enStock = false
+        } else {
+            alert("Gracias por la compra, vuelva pronto. 😊")
+            console.log("Gracias por la compra, vuelva pronto. 😊")
+        }
+    }
 }
