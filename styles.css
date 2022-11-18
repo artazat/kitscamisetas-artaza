@@ -12,7 +12,7 @@
         "main" "main" "main"
         "footer" "footer" "footer";
     width: 100%;
-    min-height: 100vh;
+    min-height: 1vh;
     max-height: 10000vh;
 }
 
@@ -43,23 +43,30 @@ header {
     justify-content: space-between;
     /* font-family: sans-serif; */
     font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.75);
 }
 
 .hedaer_img {
-    width: auto;
-    height: auto;
+    width: 90px;
+    height: 90px;
     margin-bottom: 0;
+    margin-left: 15px;
 }
 
 
 header a {
     text-decoration: none;
     color: #eee;
-    transition: all .3s;
+    transition: 1s;
 }
 
 header a:hover {
-    color: royalblue;
+    transform: scale(1.1);
+    color: #eee;
 }
 
 .header_logo {
@@ -69,7 +76,8 @@ header a:hover {
 
 .header_logo h1 {
     color: #fff;
-    margin-left: 5px;
+    font-size: 50px;
+    padding-top: 12px;
 }
 
 .header_cosas {
@@ -84,7 +92,7 @@ header a:hover {
 /* MAIN */
 main {
     grid-area: main;
-    margin-top: 70px;
+    margin-top: 80px;
     margin-bottom: 70px;
 }
 
@@ -129,29 +137,52 @@ p {
 }
 
 
+#contadorCarrito {
+    font-family: 'Roboto', sans-serif;
+    color: #eee;
+    font-size: 16px;
+    background: black;
+    border-radius: 50%;
+    padding: 1px 6px;
+    /* transition: all .5s; */
+}
+
+.contenedor-contador {
+    position: relative;
+    right: 16px;
+    top: 3px;
+}
+
 
 /* CARRO */
 #boton-carrito {
     border: none;
-    color: rgb(6, 74, 153);
-    font-size: 30px;
-    background-color: rgba(255, 255, 255, 0.856);
-    margin-right: 50px;
-    margin-left: 35px;
-    border-radius: 50%;
-    padding: 15px 8px;
-    transition: all .5s;
+    color: rgb(255, 255, 255);
+    font-size: 38px;
+    background-color: rgba(255, 255, 255, 0);
+    margin-right: 30px;
+    margin-left: 50px;
+    display: flex;
 }
 
-#boton-carrito:hover {
-    cursor: pointer;
-    color: white;
-    background-color: rgba(6, 75, 153, 0.329);
+
+
+#boton-carrito i {
+    margin-top: 6px;
+    transition: 0.5s;
 }
+
+
+#boton-carrito i:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
 
 #boton-carrito:focus {
     outline: none;
 }
+
 
 /* MODAL */
 .modal-contenedor {
@@ -228,12 +259,25 @@ p {
     border-left: 5px solid royalblue;
 }
 
+#encabezado-carrito {
+    font-weight: bold;
+    border-left: 6px solid rgb(255, 255, 255);
+}
+
+#encabezado-carrito:hover {
+    border-left: 6px solid rgb(255, 255, 255);
+}
+
+
 
 
 /* BOTONES */
 .boton-agregar {
     margin: auto;
     background-color: royalblue;
+    box-shadow: 1px 1px 8px 1px rgba(65,105,225,0.75);
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(65,105,225,0.75);
+    -moz-box-shadow: 1px 1px 8px 1px rgba(65,105,225,0.75);
     color: white;
     font-size: 18px;
     font-weight: 700;
@@ -246,7 +290,7 @@ p {
 
 .boton-agregar:hover {
     cursor: pointer;
-    color: royalblue;
+    color: rgb(25, 75, 223);
     background-color: white;
 }
 
@@ -256,6 +300,7 @@ p {
 
 .botones-separados {
     display: flex;
+    margin-top: 10px;
 }
 
 #vaciar-carrito,
@@ -263,8 +308,22 @@ p {
     margin: 0;
 }
 
+#vaciar-carrito {
+    background-color: red;
+    transition: all .3s;
+    box-shadow: none;
+}
+
+#vaciar-carrito:hover {
+    background-color: white;
+    color: red;
+    border: 2px  solid red;
+}
+
 #submit {
     margin-left: 30px;
+    box-shadow: none;
+    border: 2px  solid royalblue;
 }
 
 .boton-eliminar {
@@ -284,15 +343,26 @@ p {
 
 
 
+/* TOAST */
+.toast-compra {
+    font-size: 20px;
+}
+
+
 
 /* FOOTER */
 footer {
     grid-area: footer;
     background-color: royalblue;
+    color: #eee;
+    box-shadow: -1px -1px 7px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px -1px 7px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px -1px 7px 0px rgba(0, 0, 0, 0.75);
 }
 
 footer h3 {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: auto;
 }

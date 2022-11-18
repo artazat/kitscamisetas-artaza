@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "nombre": "River",
+        "cantidad": 1,
+        "precio": 25000,
+        "img": "./img/river.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Boca",
+        "cantidad": 1,
+        "precio": 24500,
+        "img": "./img/boca.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Belgrano",
+        "cantidad": 1,
+        "precio": 12000,
+        "img": "./img/belgrano.png"
+    },
+    {
+        "id": 4,
+        "nombre": "Talleres",
+        "cantidad": 1,
+        "precio": 13000,
+        "img": "./img/talleres.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Lanus",
+        "cantidad": 1,
+        "precio": 12000,
+        "img": "./img/lanus.png"
+    },
+    {
+        "id": 6,
+        "nombre": "Velez",
+        "cantidad": 1,
+        "precio": 15000,
+        "img": "./img/velez.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "San Lorenzo",
+        "cantidad": 1,
+        "precio": 15000,
+        "img": "./img/san-lorenzo.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Racing",
+        "cantidad": 1,
+        "precio": 15000,
+        "img": "./img/racing.jpg"
+    }
+]
