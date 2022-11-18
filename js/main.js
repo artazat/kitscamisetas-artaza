@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Traer del json los el array de objetos con un una funcion asincronica
 const elStockCompleto = async () => {
     const response = await
-        fetch('/productos.json')
+        fetch('productos.json')
     const data = await response.json()
 
     data.forEach((producto) => {
@@ -94,7 +94,7 @@ const agregarAlCarrito = (prodId) => {
     } else {
         const elStockCompleto = async () => {
             const response = await
-                fetch('/productos.json')
+                fetch('productos.json')
             const data = await response.json()
 
             const item = data.find((prod) => prod.id === prodId)
