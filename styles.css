@@ -17,9 +17,11 @@
 }
 
 body {
-    background: #eee;
+    background: linear-gradient(rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.543)), url(./img/estadio.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
-    /* font-size: 14px; */
     color: #000;
     margin: 0;
     padding: 0;
@@ -38,10 +40,9 @@ img {
 /* HEADER */
 header {
     grid-area: header;
-    background-color: royalblue;
+    background-color: rgb(43, 42, 42);
     display: flex;
     justify-content: space-between;
-    /* font-family: sans-serif; */
     font-size: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -51,10 +52,10 @@ header {
 }
 
 .hedaer_img {
-    width: 90px;
-    height: 90px;
+    width: 93.5px;
+    height: 93.5px;
     margin-bottom: 0;
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
 
@@ -72,18 +73,49 @@ header a:hover {
 .header_logo {
     display: flex;
     align-items: center;
+    padding-left: 0.3rem;
+    padding-right: 2.2rem;
 }
 
 .header_logo h1 {
     color: #fff;
     font-size: 50px;
     padding-top: 12px;
+    font-weight: 700;
 }
 
 .header_cosas {
     display: flex;
     align-items: center;
 }
+
+.link-compra {
+    margin-left: 1.7rem;
+}
+
+#link-compra2 {
+    margin-right: 2.5rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+#contenedor-busqueda {
+    margin: auto;
+}
+
+#busqueda {
+    height: 40px;
+    width: 12rem;
+    padding-left: 5px;
+    border: 3px solid #000;
+    outline: none;
+    border-radius: 6px;
+
+}
+
 
 
 
@@ -92,12 +124,19 @@ header a:hover {
 /* MAIN */
 main {
     grid-area: main;
-    margin-top: 80px;
-    margin-bottom: 70px;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    min-height: 64.4vh;
 }
 
 h2 {
+    color: #eee;
     text-align: center;
+}
+
+h2 strong {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.637);
 }
 
 
@@ -105,7 +144,7 @@ h2 {
 
 /* CARDS */
 #contenedor-productos {
-    /* max-width: 1200px; */
+    max-width: 93rem;
     margin: 20px auto;
     display: flex;
     justify-content: space-evenly;
@@ -120,12 +159,15 @@ p {
     text-align: center;
     max-width: 20%;
     padding: 10px;
-    margin: 30px;
-    margin-bottom: 20px;
-    background-color: #fff;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-color: rgb(255, 255, 255);
     box-shadow: 1px 2px 11px 0px rgba(0, 0, 0, 0.67);
     -webkit-box-shadow: 1px 2px 11px 0px rgba(0, 0, 0, 0.67);
     -moz-box-shadow: 1px 2px 11px 0px rgba(0, 0, 0, 0.67);
+    border-radius: 5px 5px 5px 5px;
 }
 
 .precioProducto {
@@ -141,16 +183,15 @@ p {
     font-family: 'Roboto', sans-serif;
     color: #eee;
     font-size: 16px;
-    background: black;
+    background: royalblue;
     border-radius: 50%;
-    padding: 1px 6px;
-    /* transition: all .5s; */
+    padding: 1.5px 7px;
 }
 
 .contenedor-contador {
     position: relative;
-    right: 16px;
-    top: 3px;
+    right: 19px;
+    top: 5px;
 }
 
 
@@ -160,8 +201,8 @@ p {
     color: rgb(255, 255, 255);
     font-size: 38px;
     background-color: rgba(255, 255, 255, 0);
-    margin-right: 30px;
-    margin-left: 50px;
+    margin-right: 25px;
+    margin-left: 2rem;
     display: flex;
 }
 
@@ -249,8 +290,9 @@ p {
     border-left: 5px solid lightblue;
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
-    margin: 5px 0;
+    margin-bottom: 20px;
     padding: 5px 10px;
+    padding: auto;
     display: flex;
     justify-content: space-between;
 }
@@ -259,14 +301,15 @@ p {
     border-left: 5px solid royalblue;
 }
 
-#encabezado-carrito {
-    font-weight: bold;
-    border-left: 6px solid rgb(255, 255, 255);
+.productoEnCarrito p {
+    margin: 0;
 }
 
-#encabezado-carrito:hover {
-    border-left: 6px solid rgb(255, 255, 255);
+.select-talle {
+    width: 20%;
+    padding-left: 15px;
 }
+
 
 
 
@@ -275,13 +318,14 @@ p {
 .boton-agregar {
     margin: auto;
     background-color: royalblue;
-    box-shadow: 1px 1px 8px 1px rgba(65,105,225,0.75);
-    -webkit-box-shadow: 1px 1px 8px 1px rgba(65,105,225,0.75);
-    -moz-box-shadow: 1px 1px 8px 1px rgba(65,105,225,0.75);
+    box-shadow: 1px 1px 8px 1px rgba(65, 105, 225, 0.75);
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(65, 105, 225, 0.75);
+    -moz-box-shadow: 1px 1px 8px 1px rgba(65, 105, 225, 0.75);
     color: white;
     font-size: 18px;
     font-weight: 700;
     padding: 5px;
+    margin-bottom: 5px;
     border: none;
     transition: all .3s;
     display: flex;
@@ -317,13 +361,22 @@ p {
 #vaciar-carrito:hover {
     background-color: white;
     color: red;
-    border: 2px  solid red;
+    border: 2px solid red;
 }
 
 #submit {
     margin-left: 30px;
     box-shadow: none;
-    border: 2px  solid royalblue;
+    border: 2px solid royalblue;
+}
+
+#submit a {
+    text-decoration: none;
+    color: #eee;
+}
+
+#submit a:hover {
+    color: royalblue;
 }
 
 .boton-eliminar {
@@ -344,16 +397,16 @@ p {
 
 
 /* TOAST */
-.toast-compra {
+/* .toast-compra {
     font-size: 20px;
-}
+} */
 
 
 
 /* FOOTER */
 footer {
     grid-area: footer;
-    background-color: royalblue;
+    background-color: rgb(43, 42, 42);
     color: #eee;
     box-shadow: -1px -1px 7px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: -1px -1px 7px 0px rgba(0, 0, 0, 0.75);
@@ -365,4 +418,196 @@ footer h3 {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: auto;
+}
+
+
+
+/* CONTACTO */
+.main-contacto {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-contacto {
+    background-color: rgb(43, 42, 42);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 27px -7px rgba(0,0,0,0.64);
+    -webkit-box-shadow: 0px 2px 27px -7px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 2px 27px -7px rgba(0,0,0,0.64);
+}
+
+.form-contacto h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fff;
+}
+
+.form-contacto label {
+    font-size: 20px;
+    color: #fff;
+}
+
+.form-contacto input {
+    background: rgba(0, 0, 0, 0.63);
+    outline: none;
+    border: 2px solid rgba(255, 254, 254, 0.932);
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.form-contacto textarea {
+    background: rgba(0, 0, 0, 0.63);
+    outline: none;
+    border: 2px solid rgba(255, 254, 254, 0.932);
+    color: #fff;
+}
+
+.nombre-contacto,
+.email-contacto {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.textarea-contacto {
+    margin-top: 1.5rem;
+}
+
+.losBotones-contacto {
+    display: flex;
+    justify-content: end;
+}
+
+.enviar-btn {
+    margin-top: 0.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background: -webkit-linear-gradient(left, #3580aa 60%, #4092b5 90%);
+    background: -o-linear-gradient(left, #3580aa 60%, #4092b5 90%);
+    background: linear-gradient(to right, #3580aa 60%, #4092b5 90%);
+    border-radius: 5px;
+    border: none !important;
+    color: rgb(211, 222, 255);
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.enviar-btn:hover {
+    background: -webkit-linear-gradient(left, #c6cacc 60%, #dddedf 90%);
+    background: -o-linear-gradient(left, #c6cacc 60%, #dddedf 90%);
+    background: linear-gradient(to right, #c6cacc 60%, #dddedf 90%);
+    color: #0c3d52;
+}
+
+.reset-btn {
+    margin-top: 0.2rem;
+    margin-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background: -webkit-linear-gradient(left, #bd3535 60%, #b54040 90%);
+    background: -o-linear-gradient(left, #bd3535 60%, #b54040 90%);
+    background: linear-gradient(to right, #bd3535 60%, #b54040 90%);
+    border-radius: 5px;
+    border: none !important;
+    color: rgb(211, 222, 255);
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.reset-btn:hover {
+    background: -webkit-linear-gradient(left, #c6cacc 60%, #dddedf 90%);
+    background: -o-linear-gradient(left, #c6cacc 60%, #dddedf 90%);
+    background: linear-gradient(to right, #c6cacc 60%, #dddedf 90%);
+    color: #0c3d52;
+}
+
+
+
+/* COMPRA */
+.main-compra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-compra section{
+    background: #eee;
+    border-radius: 7px;
+    box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 3rem 2rem 3rem;
+}
+
+.logo-compra{
+    width: 18rem;
+}
+
+.div-compra{
+    margin-top: 0.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.div-compra h2{
+    color:  rgb(43, 42, 42);
+    font-weight: 500;
+}
+
+.div-compra p{
+    color:  rgb(43, 42, 42);
+    font-size: 20px;
+    text-align: center;
+}
+
+.segundo-parrafo-compra{
+    position: relative;
+    margin-top: -20px;
+}
+
+.main-compra section button a{
+    text-decoration: none;
+    color: white;
+    transition: all .3s;
+}
+
+.main-compra section button a:hover{
+    color: royalblue;
+}
+
+.main-compra section button{
+    background-color: royalblue;
+    box-shadow: 1px 1px 8px 1px rgb(65 105 225 / 75%);
+    -webkit-box-shadow: 1px 1px 8px 1px rgb(65 105 225 / 75%);
+    -moz-box-shadow: 1px 1px 8px 1px rgba(65, 105, 225, 0.75);
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    transition: all .3s;
+}
+
+.main-compra section button:hover{
+    background-color: white;
 }

@@ -14,9 +14,9 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.ico">
     <!-- TíTULO -->
-    <title>Kits! || Inicio</title>
+    <title>Kits!| Inicio</title>
 </head>
 <div class="grid_container">
     <body>
@@ -25,8 +25,12 @@
                 <a href="index.html"><img src="./img/logo.png" alt="Logo de Kits!" class="hedaer_img"></a>
                 <h1>Kits!</h1>
             </div>
+            <div id="contenedor-busqueda">
+
+            </div>
             <div class="header_cosas">
                 <a href="./index.html">Home</a>
+                <a href="./pages/contacto.html" class="link-compra">Contacto</a>
                 <div class="boton">
                     <button id="boton-carrito">
                         <i class='bx bxs-shopping-bags'></i>
@@ -34,25 +38,18 @@
                             <span id="contadorCarrito">0</span>
                         </div>
                     </button>
-                    <!-- de referencia -->
                 </div>
             </div>
         </header>
         <main>
-            <h2>¡ELIGE LA QUE MÁS TE GUSTE!</h2>
+            <h2><strong>¡ELIGE LA QUE MÁS TE GUSTE!</strong></h2>
             <section id="contenedor-productos">
 
             </section>
             <section>
                 <div class="modal-contenedor">
                     <div class="modal-carrito">
-                        <h3>Carrito</h3>
-                        <div class="productoEnCarrito" id="encabezado-carrito">
-                            <p>Equipo</p>
-                            <p>Precio</p>
-                            <p>Cantdidad</p>
-                            <p>-</p>
-                        </div>
+                        <h3>Carrito</h3> 
                         <button id="carritoCerrar"><i class="bi bi-x-lg"></i></i></button>
                         <div id="carrito-contenedor">
 
@@ -60,7 +57,9 @@
                         <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
                         <div class="botones-separados">
                             <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
-                            <button id="submit" class="boton-agregar">Comprar</button>
+                            <button id="submit" class="boton-agregar">
+                                <a href="./pages/compra.html">Comprar</a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -73,8 +72,9 @@
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <!-- SCRIPTS -->
+        <script src="./js/busqueda.js"></script>
         <script defer src="./js/variables.js"></script>
-        <script defer src="./js/antesdelfetch.js"></script>
+        <script defer src="./js/stock.js"></script>
         <script defer src="./js/main.js"></script>
         <script defer src="./js/modal.js"></script>
     </body>
